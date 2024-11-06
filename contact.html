@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEG Contact Information</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <img src="./images/keg_logo.png" alt="Research Group Logo" id="logo">
+        <h1>KEG Contact Information</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="people.html">People</a>
+            <a href="research.html">Research</a>
+            <a href="publications.html">Publications</a>
+            <a href="datasets.html">Datasets</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="contact-info">
+            <h2>Prof. Dr. Eng. Rodica Potolea</h2>
+            <p class="position">Computer Science Department</p>
+            <p>Technical University of Cluj-Napoca, RO</p>
+            <p>Baritiu St. 26-28, room C9</p>
+            <p class="phone">Phone: <a href="tel:+40264202389">+40-264202389</a></p>
+            <p class="email">E-mail: <a href="mailto:rodica.potolea@cs.utcluj.ro">rodica.potolea@cs.utcluj.ro</a></p>
+        </div>
+
+        <div class="contact-info">
+            <h2>Prof. Dr. Eng. Mihaela Dinsoreanu</h2>
+            <p class="position">Computer Science Department</p>
+            <p>Technical University of Cluj-Napoca, RO</p>
+            <p>Baritiu St. 26-28, room D01</p>
+            <p class="phone">Phone: <a href="tel:+40264402387">+40-264402387</a></p>
+            <p class="email">E-mail: <a href="mailto:mihaela.dinsoreanu@cs.utcluj.ro">mihaela.dinsoreanu@cs.utcluj.ro</a></p>
+        </div>
+        
+        <div class="contact-info">
+            <h2>Conf. Dr. Eng. Camelia Lemnaru</h2>
+            <p class="position">Computer Science Department</p>
+            <p>Technical University of Cluj-Napoca, RO</p>
+            <p>Baritiu St. 26-28, room M03</p>
+            <p class="email">E-mail: <a href="mailto:camelia.lemnaru@cs.utcluj.ro">camelia.lemnaru@cs.utcluj.ro</a></p>
+        </div>
+
+        <div class="contact-info">
+            <h2>Assist. Dr. Eng. Raluca Laura Portase</h2>
+            <p class="position">Computer Science Department</p>
+            <p>Technical University of Cluj-Napoca, RO</p>
+            <p>Baritiu St. 26-28, room M03</p>
+            <p class="email">E-mail: <a href="mailto:rodica.potolea@cs.utcluj.ro">raluca.portase@cs.utcluj.ro</a></p>
+        </div>
+
+        <div class="contact-info">
+            <h2>Assist. Dr. Eng. Eugen-Richard Ardelean</h2>
+            <p class="position">Computer Science Department</p>
+            <p>Technical University of Cluj-Napoca, RO</p>
+            <p>Baritiu St. 26-28, room M03</p>
+            <p class="email">E-mail: <a href="mailto:mihaela.dinsoreanu@cs.utcluj.ro">eugen.ardelean@cs.utcluj.ro</a></p>
+        </div>
+
+        <div class="contact-info">
+            <h2>Assist. Drd. Eng. Vlad Andrei Negru</h2>
+            <p class="position">Computer Science Department</p>
+            <p>Technical University of Cluj-Napoca, RO</p>
+            <p>Baritiu St. 26-28, room M03</p>
+            <p class="email">E-mail: <a href="mailto:camelia.lemnaru@cs.utcluj.ro">vlad.negru@cs.utcluj.ro</a></p>
+        </div>
+
+    </main>
+
+
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Load footer.html content into the #footer-placeholder div
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer-placeholder").innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
+    </script>
+</body>

@@ -1,0 +1,212 @@
+/* css/style.css */
+html, body {
+    height: 100%; /* Make sure the body and html elements take the full height of the page */
+    margin: 0;
+}
+
+/* Style for the header */
+header, footer {
+    background-color: #333;  /* Dark background */
+    color: white;  /* White text */
+    padding: 1em;
+    text-align: center;  /* Aligns text in the center */
+    box-sizing: border-box;
+    width: 100%;  /* Ensure the header spans the full width */
+    justify-content: space-between; /* Space out logo, heading, and nav */
+    padding: 10px 20px; /* Padding for spacing */
+    flex-wrap: wrap; /* Allow elements to wrap on small screens */
+}
+
+#logo {
+    max-width: 100px; /* Limit the size of the logo */
+    height: auto;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+main {
+    flex: 1; /* This ensures the main content takes up all available space */
+    padding: 2em;
+    max-width: 800px;
+    margin: auto;
+}
+
+
+h1, h2 {
+    color: white;  /* White text */
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    color: #444;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+
+p {
+    text-align: justify;
+    line-height: 1.6; /* Optional: improves readability */
+}
+
+
+
+
+
+section {
+    margin-bottom: 2em;
+}
+
+.member {
+    margin-bottom: 1em;
+}
+
+.member a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+.member a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin: 0.5em 0;
+}
+
+.research-section h2 {
+    padding-top: 40px;
+}
+.research-section ul {
+    padding-left: 20px; /* Parent list */
+}
+
+.research-section ul ul {
+    padding-left: 40px; /* Indentation for nested lists */
+}
+
+.research-section li {
+    text-align: justify;
+}
+
+
+.publication-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the content horizontally */
+    gap: 20px; /* Space between the boxes */
+    max-width: 1200px; /* Set a fixed max width for consistent centering */
+    width: 100%;
+    margin: auto; /* Center the entire container on the page */
+    padding: 20px; /* Optional: Add some padding for spacing */
+}
+
+.publication {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 40px); /* Adjust for three columns, minus gap */
+    min-width: 300px; /* Ensures items don't shrink too small on smaller screens */
+    max-width: 400px; /* Limits the maximum width per item */
+    flex-grow: 1; /* Allows items to grow equally */
+    flex-shrink: 0; /* Prevents shrinking */
+}
+
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+}
+.authors {
+    font-size: 14px;
+    color: #555;
+}
+.details {
+    font-size: 12px;
+    color: #777;
+}
+
+
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.dataset-section {
+    margin-bottom: 30px;
+}
+
+.dataset-section a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.dataset-section a:hover {
+    text-decoration: underline;
+}
+
+.download-link {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.contact-info .name {
+    font-weight: bold;
+}
+
+.contact-info .position {
+    font-style: italic;
+}
+
+.contact-info .email, .contact-info .phone {
+    color: #007bff;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+

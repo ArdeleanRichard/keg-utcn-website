@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEG Datasets</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <img src="./images/keg_logo.png" alt="Research Group Logo" id="logo">
+        <h1>KEG Datasets</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="people.html">People</a>
+            <a href="research.html">Research</a>
+            <a href="publications.html">Publications</a>
+            <a href="datasets.html">Datasets</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <h1>Datasets</h1>
+
+            <div class="dataset-section">
+                <h2>Movie Reviews and Product Reviews - Amazon</h2>
+                <p>The archive contains the following three datasets: Product Reviews, Movie Reviews, and Polarity Assignment Test Data, all containing data from amazon.com. Partial annotation performed by Alexandru Cristian Cosma, Vlad Vasile Itu, and Darius Suciu, 2014. Further information can be found in the Readme.txt files in the archive folders.</p>
+                <p><strong>Datasets employed in:</strong> Alexandru Cristian Cosma, Vlad Vasile Itu, and Darius Suciu, "Unsupervised domain independent opinion extraction", awarded first prize at the Computer Science Students Conference 2014, CS Department, Technical University of Cluj-Napoca.</p>
+                <p class="download-link"><a href="https://keg.utcluj.ro/datasets/cosma_itu_suciu.zip">Download: Amazon Reviews Sentiment Analysis</a></p>
+            </div>
+
+            <div class="dataset-section">
+                <h2>Movie Reviews (Romanian)</h2>
+                <p>The data have been manually collected from 4 different Romanian movie sites/blogs: <a href="http://filme-carti.ro/" target="_blank">filme-carti.ro</a>, <a href="http://cineblog.info" target="_blank">cineblog.info</a>, <a href="http://procinema.ro" target="_blank">procinema.ro</a>, and <a href="http://filmblog.ro" target="_blank">filmblog.ro</a>.</p>
+                <p>The reviews have been divided into two classes: positive and negative. The dataset contains 1000 documents: 500 positive and 500 negative. The data has been manually annotated for the task of sentiment analysis.</p>
+                <p><strong>Datasets employed in:</strong> Roxana Russu and Oana Luminita Vlad, "Applying Opinion Mining Learning Techniques for Romanian Language", mention at the Computer Science Students Conference 2014, CS Department, Technical University of Cluj-Napoca.</p>
+                <p class="download-link"><a href="https://keg.utcluj.ro/datasets/russu_vlad.zip">Download: Movie Reviews Romanian</a></p>
+            </div>
+    </main>
+
+
+
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Load footer.html content into the #footer-placeholder div
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer-placeholder").innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
+    </script>
+</body>
+</html>

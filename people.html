@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEG Members</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <img src="./images/keg_logo.png" alt="Research Group Logo" id="logo">
+        <h1>KEG Members</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="people.html">People</a>
+            <a href="research.html">Research</a>
+            <a href="publications.html">Publications</a>
+            <a href="datasets.html">Datasets</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="staff">
+            <h2>Staff</h2>
+            <div class="member">
+                <h3>Prof. Dr. Eng. Rodica Potolea</h3>
+                <p><a href="http://users.utcluj.ro/~potolea/" target="_blank">Personal page</a></p>
+                <p>E-mail: <a href="mailto:rodica.potolea@cs.utcluj.ro">rodica.potolea@cs.utcluj.ro</a></p>
+            </div>
+                <div class="member">
+                    <h3>Prof. Dr. Eng. Mihaela Dinsoreanu</h3>
+                    <p><a href="http://cs.utcluj.ro/Dinsoreanu/index.html" target="_blank">Personal page</a></p>
+                    <p>E-mail: <a href="mailto:mihaela.dinsoreanu@cs.utcluj.ro">mihaela.dinsoreanu@cs.utcluj.ro</a></p>
+                </div>
+                <div class="member">
+                    <h3>Conf. Dr. Eng. Camelia Lemnaru</h3>
+                    <p><a href="http://users.utcluj.ro/~cameliav/" target="_blank">Personal page</a></p>
+                    <p>E-mail: <a href="mailto:camelia.lemnaru@cs.utcluj.ro">camelia.lemnaru@cs.utcluj.ro</a></p>
+                </div>
+                <div class="member">
+                    <h3>Assist. Dr. Eng. Raluca Laura Portase</h3>
+                    <p>E-mail: <a href="mailto:rodica.potolea@cs.utcluj.ro">raluca.portase@cs.utcluj.ro</a></p>
+                </div>
+                <div class="member">
+                    <h3>Assist. Dr. Eng. Eugen-Richard Ardelean</h3>
+                    <p>E-mail: <a href="mailto:mihaela.dinsoreanu@cs.utcluj.ro">eugen.ardelean@cs.utcluj.ro</a></p>
+                </div>
+                <div class="member">
+                    <h3>Assist. Drd. Eng. Vlad Andrei Negru</h3>
+                    <p>E-mail: <a href="mailto:camelia.lemnaru@cs.utcluj.ro">vlad.negru@cs.utcluj.ro</a></p>
+                </div>
+        </section>
+
+        <section class="phd-graduates">
+            <h2>PhD Graduates</h2>
+            <div class="member">
+                <h3>Ioana Bărbănțan</h3>
+                <p><a href="PhD Thesis.pdf" target="_blank">PhD Thesis (PDF)</a></p>
+            </div>
+            <div class="member">
+                <h3>Cristian Lungu</h3>
+            </div>
+            <div class="member">
+                <h3>Lucian Teodorescu</h3>
+            </div>
+            <div class="member">
+                <h3>Andrei Vanea</h3>
+                <p><a href="Short Bio.pdf" target="_blank">Short Bio</a>, <a href="PhD Thesis.pdf" target="_blank">PhD Thesis (PDF)</a></p>
+            </div>
+        </section>
+
+        <section class="students">
+            <h2>Students</h2>
+            <ul>
+                <li>Andreea Baciu, PhD student</li>
+                <li>Victor Ionescu, PhD student</li>
+                <li>Octavian Hasna, PhD student</li>
+                <li>Florin Macicasan, PhD student</li>
+            </ul>
+        </section>
+
+        <section class="former-members">
+            <h2>Former Members</h2>
+            <div class="member">
+                <h3>Aliz Nagy, Eng.</h3>
+                <p>Student, MSc</p>
+            </div>
+            <div class="member">
+                <h3>Mihai Cuibus, Eng.</h3>
+                <p>Researcher, former PhD student</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const footerPlaceholder = document.getElementById("footer-placeholder");
+            
+            fetch("footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    footerPlaceholder.innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
+    </script>
+</body>
+</html>

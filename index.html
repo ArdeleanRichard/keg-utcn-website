@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Engineering Research Group (KEG)</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <img src="./images/keg_logo.png" alt="Research Group Logo" id="logo">
+        <h1>Welcome to the Knowledge Engineering Research Group (KEG)</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="people.html">People</a>
+            <a href="research.html">Research</a>
+            <a href="publications.html">Publications</a>
+            <a href="datasets.html">Datasets</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>About Us</h2>
+            <p>The Knowledge Engineering Group (KEG) is addressing problems for knowledge extraction, representation, storage and management that the information era has brought in various segments of human activity due to data overload.</p>
+            <p>
+                Fundamental theoretical aspects: dealing with problem-specific features extraction from both structured data, pre-processing techniques for handling noisy and/or incomplete data, learning from balanced/unbalanced and structured/unstructured data.
+            </p>
+            <p>  Practical approaches:
+                Data Mining application prototypes for both structured data (assisted medical diagnosis, spam detection, signature recognition) and unstructured data (topic extraction, opinion mining, community detection, semi-supervised text labelling, contradiction detection).
+                Business Intelligence application prototypes dealing with heterogeneous data integration by ontology-driven, (semi-) automatic design of unified data structures and automatic design of the corresponding ETL processes.</p>
+        </section>
+        <!-- Add more sections as needed -->
+    </main>
+
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Load footer.html content into the #footer-placeholder div
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer-placeholder").innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
+    </script>
+</body>
+</html>
