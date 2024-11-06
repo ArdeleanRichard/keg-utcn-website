@@ -87,6 +87,7 @@ p {
 .member h3 {
     font-size: 1.2em;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 .member a {
@@ -108,22 +109,23 @@ p {
     color: #FF5722;
 }
 
-/* Student List */
-.students ul {
+
+.students ul, .phd-graduates ul {
     list-style: none;
     padding: 0;
 }
 
-.students li {
+.students li, .phd-graduates li {
     background: #fff;
-    margin: 5px 0;
-    padding: 10px;
+    margin: 8px 0;
+    padding: 16px;
     border-radius: 4px;
     border: 1px solid #ddd;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-size: 16px;
+    color: #444;
+    font-weight: bold;
 }
-
-
 
 
 section {
