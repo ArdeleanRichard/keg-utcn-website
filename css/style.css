@@ -4,12 +4,11 @@ html, body {
     margin: 0;
 }
 
-
 body {
     font-family: Arial, sans-serif;
 }
 
-/* Style for the header */
+/* Style for the header and footer */
 header, footer {
     background-color: #3B3B3B;  /* Dark background */
     color: white;  /* White text */
@@ -27,6 +26,9 @@ header, footer {
     height: auto;
 }
 
+.copyright {
+    text-align: center;
+}
 
 body {
     font-family: Arial, sans-serif;
