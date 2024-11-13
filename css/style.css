@@ -280,10 +280,17 @@ body {
 
 .contact-info {
     margin-bottom: 20px;
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
 .contact-info p {
     margin: 5px 0;
+    text-align: center;
 }
 
 .contact-info .name {
