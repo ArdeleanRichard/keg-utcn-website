@@ -6,7 +6,7 @@ html, body {
 
 /* Style for the header */
 header, footer {
-    background-color: #333;  /* Dark background */
+    background-color: #3B3B3B;  /* Dark background */
     color: white;  /* White text */
     padding: 1em;
     text-align: center;  /* Aligns text in the center */
