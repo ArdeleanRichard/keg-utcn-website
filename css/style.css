@@ -53,6 +53,7 @@ h1, h2 {
 h2 {
     color: #333;
     margin-bottom: 0.5em;
+    text-align: center;
 }
 
 h3 {
@@ -109,6 +110,11 @@ strong {
     flex-wrap: wrap;      /* Ensures members wrap onto new lines as needed */
     gap: 20px;            /* Adds space between each .member-info div */
     justify-content: center;
+    margin-bottom: 40px;
+}
+
+.our-team {
+    margin-bottom: 30px;
 }
 
 .member-info {
@@ -124,11 +130,12 @@ strong {
 }
 
 .member-photo {
-    width: 100px;  /* Adjust size as needed */
-    height: 100px; /* Ensure it’s square */
+    width: 140px;  /* Adjust size as needed */
+    height: 140px; /* Ensure it’s square */
     border-radius: 50%; /* Makes the photo circular */
     margin-right: 15px;
     object-fit: cover; /* Ensures the image scales nicely */
+    margin-left: 16px;
 }
 
 .member-details {
@@ -170,11 +177,6 @@ strong {
 
 .member-info {
     margin-bottom: 1em;
-}
-
-.member-info a {
-    color: #0073e6;
-    text-decoration: none;
 }
 
 .member-info a:hover {
