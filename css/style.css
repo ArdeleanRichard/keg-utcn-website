@@ -67,6 +67,15 @@ p {
 }
 
 
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin: 0.5em 0;
+}
+
 
 /* Member Profile Styles */
 .staff, .phd-graduates, .students, .former-members {
@@ -109,12 +118,6 @@ p {
     color: #FF5722;
 }
 
-
-.students ul, .phd-graduates ul {
-    list-style: none;
-    padding: 0;
-}
-
 .students li, .phd-graduates li {
     background: #fff;
     margin: 8px 0;
@@ -145,18 +148,50 @@ section {
     text-decoration: underline;
 }
 
-ul {
-    list-style-type: none;
-    padding-left: 0;
+
+.about-section ul {
+    padding-left: 20px; /* Parent list */
 }
 
-ul li {
-    margin: 0.5em 0;
+strong {
+    color: orangered;
+}
+
+
+
+
+
+.research-section h4 {
+    color: orangered;
+}
+
+.research-section h1 {
+    font-size: 36px;
 }
 
 .research-section h2 {
+    font-size: 30px;
     padding-top: 40px;
 }
+
+.research-section h3 {
+    font-size: 24px;
+}
+
+.research-section h4 {
+    font-size: 24px;
+    color: orangered;
+}
+
+.research-section h5 {
+    font-size: 20px;
+    margin-block-end: 0em;
+}
+
+
+
+
+
 .research-section ul {
     padding-left: 20px; /* Parent list */
 }
@@ -168,6 +203,10 @@ ul li {
 .research-section li {
     text-align: justify;
 }
+
+
+
+
 
 
 .publication-section {
