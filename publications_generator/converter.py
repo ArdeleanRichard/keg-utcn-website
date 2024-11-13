@@ -31,7 +31,19 @@ def generate_html_from_csv_files(csv_files):
     combined_df = combined_df.sort_values(by='Year', ascending=False)
 
     combined_df['Year'] = pd.to_numeric(combined_df['Year'], errors='coerce')  # Coerce invalid values to NaN
+
+    combined_df = combined_df.dropna(how='all')
+    print(combined_df.tail(5))
+
     combined_df['Year'] = combined_df['Year'].fillna(-1).astype(int)  # Replace NaN with -1 (or any value you prefer) and cast to int
+
+    # Replace NaN in 'Pages' column with an empty string for easy checking in the template
+    combined_df['Publication'] = combined_df['Publication'].fillna('')
+    combined_df['Pages'] = combined_df['Pages'].fillna('')
+    combined_df['Publisher'] = combined_df['Publisher'].fillna('')
+
+    # Remove duplicates based on the 'title' column
+    combined_df = combined_df.drop_duplicates(subset='Title', keep='first')
 
     # Create an HTML template with Jinja2 for the publication list
     html_template = """
@@ -78,10 +90,16 @@ def generate_html_from_csv_files(csv_files):
             <div class="title">{{ row['Title'] }}</div>
             <div class="authors">Authors: {{ row['Authors'] }}</div>
             <div class="details">
-                <p><strong>Publication:</strong> {{ row['Publication'] }}</p>
+                {% if row['Publication'] %}
+                    <p><strong>Publication:</strong> {{ row['Publication'] }}</p>
+                {% endif %}
                 <p><strong>Year:</strong> {{ row['Year'] }}</p>
-                <p><strong>Pages:</strong> {{ row['Pages'] }}</p>
-                <p><strong>Publisher:</strong> {{ row['Publisher'] }}</p>
+                {% if row['Pages'] %}
+                    <p><strong>Pages:</strong> {{ row['Pages'] }}</p>
+                {% endif %}
+                {% if row['Publisher'] %}
+                    <p><strong>Publisher:</strong> {{ row['Publisher'] }}</p>
+                {% endif %}
             </div>
         </div>
         {% endfor %}
