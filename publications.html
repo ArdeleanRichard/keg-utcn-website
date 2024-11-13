@@ -9,18 +9,7 @@
     
 </head>
 <body>
-    <header>
-        <img src="./images/keg_logo.png" alt="Research Group Logo" id="logo">
-        <h1>KEG Publications</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="people.html">People</a>
-            <a href="research.html">Research</a>
-            <a href="publications.html">Publications</a>
-            <a href="datasets.html">Datasets</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
     
     <div class="publication-section">
          <div class="publication">
@@ -1904,15 +1893,30 @@
     <div id="footer-placeholder"></div>
 
     <script>
-        // Load footer.html content into the #footer-placeholder div
         document.addEventListener("DOMContentLoaded", function() {
-            fetch("footer.html")
+            const headerPlaceholer = document.getElementById("header-placeholder");
+            
+            fetch("header.html")
                 .then(response => response.text())
                 .then(data => {
-                    document.getElementById("footer-placeholder").innerHTML = data;
+                    headerPlaceholer.innerHTML = data;
                 })
                 .catch(error => console.error('Error loading footer:', error));
         });
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const footerPlaceholder = document.getElementById("footer-placeholder");
+            
+            fetch("footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    footerPlaceholder.innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
+</script>
+
 </body>
 </html>

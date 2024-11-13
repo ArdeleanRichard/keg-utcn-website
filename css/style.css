@@ -4,6 +4,11 @@ html, body {
     margin: 0;
 }
 
+
+body {
+    font-family: Arial, sans-serif;
+}
+
 /* Style for the header */
 header, footer {
     background-color: #3B3B3B;  /* Dark background */
@@ -77,46 +82,107 @@ ul li {
 }
 
 
-/* Member Profile Styles */
-.staff, .phd-graduates, .students, .former-members {
+.about-section ul {
+    padding-left: 20px; /* Parent list */
+}
+
+strong {
+    color: orangered;
+}
+
+
+
+
+/*  */
+/*  */
+/* People page styles */
+/*  */
+/*  */
+.staff-section, .phd-graduates-section, .phd-students-section, .former-members-section {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 15px;
 }
 
-.member {
+.staff-section {
+    display: flex;
+    flex-wrap: wrap;      /* Ensures members wrap onto new lines as needed */
+    gap: 20px;            /* Adds space between each .member-info div */
+    justify-content: center;
+}
+
+.member-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
     background: #fff;
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: left; /* Changed to left-align text within the details */
+}
+
+.member-photo {
+    width: 100px;  /* Adjust size as needed */
+    height: 100px; /* Ensure it’s square */
+    border-radius: 50%; /* Makes the photo circular */
+    margin-right: 15px;
+    object-fit: cover; /* Ensures the image scales nicely */
+}
+
+.member-details {
+    flex: 1; /* Allows the details to take up remaining space */
+}
+
+.member-info name {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+
+.member-info p {
+    margin: 5px 0;
     text-align: center;
 }
 
-.member h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    text-align: left;
+.member-info .name {
+    font-weight: bold;
 }
 
-.member a {
-    color: #FF5722;
+.member-info .position {
+    font-style: italic;
+}
+
+.member-info .email, .member-info .phone {
+    color: orangered;
+}
+
+.member-info a {
+    color: orangered;
     text-decoration: none;
 }
 
-.member a:hover {
+.member-info a:hover {
     text-decoration: underline;
 }
 
-/* Email styling */
-.member p {
-    font-size: 0.9em;
-    color: #666;
+.member-info {
+    margin-bottom: 1em;
 }
 
-.member a[href^="mailto:"] {
-    color: #FF5722;
+.member-info a {
+    color: #0073e6;
+    text-decoration: none;
 }
+
+.member-info a:hover {
+    text-decoration: underline;
+}
+
+
+
 
 .students li, .phd-graduates li {
     background: #fff;
@@ -130,35 +196,23 @@ ul li {
     font-weight: bold;
 }
 
-
-section {
-    margin-bottom: 2em;
-}
-
-.member {
-    margin-bottom: 1em;
-}
-
-.member a {
-    color: #0073e6;
-    text-decoration: none;
-}
-
-.member a:hover {
-    text-decoration: underline;
-}
-
-
-.about-section ul {
-    padding-left: 20px; /* Parent list */
-}
-
-strong {
-    color: orangered;
+.phd-graduates-section ul li, .phd-students-section ul li {
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
 
 
+/*  */
+/*  */
+/* Research page style */
+/*  */
+/*  */
 
 
 .research-section h4 {
@@ -206,7 +260,11 @@ strong {
 
 
 
-
+/*  */
+/*  */
+/* Publications page style */
+/*  */
+/*  */
 
 
 .publication-section {
@@ -253,10 +311,6 @@ strong {
 
 
 
-body {
-    font-family: Arial, sans-serif;
-}
-
 .dataset-section {
     margin-bottom: 30px;
 }
@@ -278,39 +332,9 @@ body {
 
 
 
-.contact-info {
-    margin-bottom: 20px;
-    background: #fff;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: center;
-}
 
-.contact-info p {
-    margin: 5px 0;
-    text-align: center;
-}
 
-.contact-info .name {
-    font-weight: bold;
-}
 
-.contact-info .position {
-    font-style: italic;
-}
 
-.contact-info .email, .contact-info .phone {
-    color: #FF5722;
-}
 
-.contact-info a {
-    color: #FF5722;
-    text-decoration: none;
-}
-
-.contact-info a:hover {
-    text-decoration: underline;
-}
 
