@@ -294,7 +294,7 @@ strong {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Center the content horizontally */
-    gap: 20px; /* Space between the boxes */
+    gap: 40px; /* Space between the boxes */
     max-width: 1200px; /* Set a fixed max width for consistent centering */
     width: 100%;
     margin: auto; /* Center the entire container on the page */
@@ -348,7 +348,7 @@ strong {
 .simpler-publication {
     margin-bottom: 3%;
     border-radius: 8px;
-
+    text-align: justify;
 }
 
 .simpler-publication .title{
