@@ -20,11 +20,6 @@ header, footer {
     flex-wrap: wrap; /* Allow elements to wrap on small screens */
 }
 
-footer {
-    padding: 0em;
-    padding: 0 0; /* Padding for spacing */
-}
-
 #logo {
     max-width: 100px; /* Limit the size of the logo */
     height: auto;
