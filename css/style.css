@@ -29,6 +29,16 @@ header, footer {
     text-align: center;
 }
 
+.footerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.utcnLogo {
+    margin: auto;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -232,12 +242,14 @@ strong {
 }
 
 .research-section h3 {
-    font-size: 24px;
+    font-size: 28px;
+    text-align: center;
 }
 
 .research-section h4 {
     font-size: 24px;
     color: orangered;
+    text-align: center;
 }
 
 .research-section h5 {
@@ -353,19 +365,12 @@ strong {
 }
 
 
-
-
-
-
-
-
-
 .dataset-section {
     margin-bottom: 30px;
 }
 
 .dataset-section a {
-    color: #007bff;
+    color: #444;
     text-decoration: none;
 }
 
