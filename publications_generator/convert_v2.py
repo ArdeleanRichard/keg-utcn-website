@@ -149,7 +149,7 @@ def generate_html_from_csv_files(csv_files):
                 <div class="details">
                     <span>Year: {{ row['Year'] }}</span>
                     {% if row['Pages'] %}
-                        <span>Pages:{{ row['Pages'] }}</span>
+                        <span>Pages: {{ row['Pages'] }}</span>
                     {% endif %}
                     {% if row['Publisher'] %}
                         <span>Publisher: {{ row['Publisher'] }}</span>
