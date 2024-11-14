@@ -1,34 +1,38 @@
 import pandas as pd
 from jinja2 import Template
 
-# Function to generate the HTML file for combined publications from multiple CSVs
-def generate_html_from_csv_files(csv_files):
-    all_data = []  # List to hold data from all CSV files
 
-    # Loop through each CSV file and read the data
-    for csv_file_path in csv_files:
-        try:
-            # Load the CSV data into a DataFrame
-            # Use 'on_bad_lines' to read and retain rows with issues, and then fill NaN where necessary
-            df = pd.read_csv(csv_file_path, encoding='utf-8', on_bad_lines='warn')  # We just warn, not skip
-            df = df.apply(pd.to_numeric, errors='ignore')  # Convert columns to numeric, keep errors as NaN
-            all_data.append(df)  # Add the DataFrame to the list
-        except FileNotFoundError:
-            print(f"Error: The file '{csv_file_path}' was not found.")
-            continue  # Skip this file and move to the next one
-        except pd.errors.ParserError as e:
-            print(f"Error parsing '{csv_file_path}': {e}")
-            continue  # Skip this file and move to the next one
+def combine_csv_files(csv_files, output_file="./all_articles.csv"):
+    # Read and concatenate all CSV files into a single DataFrame
+    dataframes = [pd.read_csv(f) for f in csv_files]
+    combined_df = pd.concat(dataframes, ignore_index=True)
 
-    if not all_data:
-        print("No valid data files found.")
-        return
+    # Sort by the number of non-null values in each row (descending)
+    combined_df['non_null_count'] = combined_df.notna().sum(axis=1)
+    combined_df.sort_values('non_null_count', ascending=False, inplace=True)
 
-    # Concatenate all data frames into one DataFrame
-    combined_df = pd.concat(all_data, ignore_index=True)
+    # Drop duplicates, keeping the row with the most non-null values
+    combined_df = combined_df.drop_duplicates(subset=combined_df.columns.difference(['non_null_count']), keep='first')
+
+    # Remove the helper column used for counting non-null values
+    combined_df.drop(columns=['non_null_count'], inplace=True)
 
     # Sort by year in descending order
     combined_df = combined_df.sort_values(by='Year', ascending=False)
+
+    # Write the cleaned DataFrame to the output CSV file
+    combined_df.to_csv(output_file, index=False)
+
+    print(f"Combined file saved as {output_file}")
+
+    return combined_df
+
+
+# Function to generate the HTML file for combined publications from multiple CSVs
+def generate_html_from_csv_files(csv_files):
+
+    combined_df = combine_csv_files(csv_files)
+
 
     combined_df['Year'] = pd.to_numeric(combined_df['Year'], errors='coerce')  # Coerce invalid values to NaN
 
@@ -41,6 +45,7 @@ def generate_html_from_csv_files(csv_files):
     combined_df['Publication'] = combined_df['Publication'].fillna('')
     combined_df['Pages'] = combined_df['Pages'].fillna('')
     combined_df['Publisher'] = combined_df['Publisher'].fillna('')
+    combined_df['Link'] = combined_df['Link'].fillna('')
 
     # Remove duplicates based on the 'title' column
     combined_df = combined_df.drop_duplicates(subset='Title', keep='first')
@@ -87,7 +92,13 @@ def generate_html_from_csv_files(csv_files):
         <h1>Publications</h1>
         {% for index, row in combined_df.iterrows() %}
         <div class="publication">
-            <div class="title">{{ row['Title'] }}</div>
+            <div class="title">
+                {% if row['Link'] %}
+                    <a href="{{ row['Link'] }}" target="_blank">{{ row['Title'] }}</a>
+                {% else %}
+                    {{ row['Title'] }}
+                {% endif %}
+            </div>
             <div class="authors">Authors: {{ row['Authors'] }}</div>
             <div class="details">
                 {% if row['Publication'] %}
@@ -121,10 +132,6 @@ def generate_html_from_csv_files(csv_files):
     print(f"Combined HTML file created: {output_file_path}")
 
 
-# Main function to process multiple CSV files
-def process_multiple_csv_files(csv_files):
-    generate_html_from_csv_files(csv_files)
-
 
 csv_files = [
     "As. drd. ing. Eugen-Richard Ardelean.csv",
@@ -135,4 +142,4 @@ csv_files = [
 ]
 
 # Process each CSV file and generate a single combined HTML file
-process_multiple_csv_files(csv_files)
+generate_html_from_csv_files(csv_files)
