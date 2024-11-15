@@ -20,6 +20,10 @@ header, footer {
     flex-wrap: wrap; /* Allow elements to wrap on small screens */
 }
 
+footer p {
+    color: #000000;
+}
+
 nav {
     display: flex;
     justify-content: center;
@@ -61,8 +65,14 @@ body {
 main {
     flex: 1; /* This ensures the main content takes up all available space */
     padding: 0 2em 2em 2em;
-    max-width: 90vw;
     margin: auto;
+    max-width: 800px;
+}
+
+@media screen and (max-width: 765px) {
+    main {
+        max-width: 90vw;
+    }
 }
 
 
@@ -150,7 +160,7 @@ strong {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     text-align: left; /* Changed to left-align text within the details */
-    max-width: 95vw;
+    max-width: 95vw; /* Only applies for screen widths below 765px */
 }
 
 .member-photo {
@@ -310,7 +320,7 @@ strong {
     width: 100%;
     margin: auto; /* Center the entire container on the page */
     padding: 20px; /* Optional: Add some padding for spacing */
-    max-width: 90vw;
+    max-width: 90vw; /* Only applies for screen widths below 765px */
 }
 
 
@@ -352,10 +362,10 @@ strong {
     flex-wrap: wrap;
     justify-content: center; /* Center the content horizontally */
     gap: 20px; /* Space between the boxes */
-    max-width: 90vw;
     width: 100%;
     margin: auto; /* Center the entire container on the page */
     padding: 20px; /* Optional: Add some padding for spacing */
+    max-width: 90vw; /* Only applies for screen widths below 765px */
 }
 
 .simpler-publication {
