@@ -38,9 +38,9 @@ def generate_html_from_csv_files(csv_files):
     combined_df = combined_df.dropna(how='all')
     print(combined_df.tail(5))
 
-    combined_df['Year'] = combined_df['Year'].fillna(-1).astype(int)  # Replace NaN with -1 (or any value you prefer) and cast to int
 
     # Replace NaN in 'Pages' column with an empty string for easy checking in the template
+    combined_df['Year'] = combined_df['Year'].fillna(-1).astype(int)  # Replace NaN with -1 (or any value you prefer) and cast to int
     combined_df['Publication'] = combined_df['Publication'].fillna('')
     combined_df['Pages'] = combined_df['Pages'].fillna('')
     combined_df['Publisher'] = combined_df['Publisher'].fillna('')
@@ -49,6 +49,35 @@ def generate_html_from_csv_files(csv_files):
 
     # Remove duplicates based on the 'Title' column
     combined_df = combined_df.drop_duplicates(subset='Title', keep='first')
+
+    # Define a function to count non-empty fields in each row
+    def count_non_empty(row):
+        return row.astype(bool).sum()  # Counts non-empty (non-zero, non-empty string) entries in the row
+
+    # Convert the 'Title' column to lowercase for grouping
+    combined_df['Title_lower'] = combined_df['Title'].str.lower()  # Temporary column for case-insensitive grouping
+
+    # Select row with most non-empty fields for each lowercase title, then reset index to match `combined_df`
+    most_info_df = (
+        combined_df.groupby('Title_lower', group_keys=False)
+        .apply(lambda x: x.loc[x.apply(count_non_empty, axis=1).idxmax()])
+        .reset_index(drop=True)
+    )
+
+    combined_df = most_info_df.drop(columns='Title_lower')
+    combined_df = combined_df.loc[~combined_df['Title'].str.lower().duplicated(keep='first')]
+
+    # Sort by year in descending order
+    combined_df = combined_df.sort_values(by='Year', ascending=False)
+
+
+    output_file = "./all_articles_filtered.csv"
+    combined_df.to_csv(output_file, index=False)
+    print(f"Combined file saved as {output_file}")
+
+
+
+
 
     # Separate highlighted publications from the rest
     highlighted_df = combined_df[combined_df['Highlight'] != '']
